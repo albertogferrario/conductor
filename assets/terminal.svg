@@ -51,7 +51,7 @@
     <!-- Title and subtitle -->
     <text class="text white" font-size="15" y="168">  Conductor <tspan class="dim">v1.4.27</tspan></text>
     <text class="text white" font-size="15" y="192">  A meta-prompting, context engineering and spec-driven</text>
-    <text class="text white" font-size="15" y="212">  development system for Claude Code by TÂCHES.</text>
+    <text class="text white" font-size="15" y="212">  development system for Claude Code.</text>
 
     <!-- Install output -->
     <text class="text" font-size="15" y="260"><tspan class="green">  ✓</tspan><tspan class="white"> Installed commands/conductor</tspan></text>

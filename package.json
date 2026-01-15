@@ -1,7 +1,7 @@
 {
   "name": "conductor-cc",
   "version": "1.4.27",
-  "description": "A meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+  "description": "A meta-prompting, context engineering and spec-driven development system for Claude Code.",
   "bin": {
     "conductor-cc": "bin/install.js"
   },
@@ -19,7 +19,7 @@
     "spec-driven-development",
     "workflow-orchestration"
   ],
-  "author": "TÂCHES",
+  "author": "albertogferrario",
   "license": "MIT",
   "repository": {
     "type": "git",

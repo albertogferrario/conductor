@@ -2,7 +2,7 @@
 
 # CONDUCTOR
 
-**A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.**
+**A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code.**
 
 **Solves context rot — the quality degradation that happens as Claude fills its context window.**
 
@@ -52,8 +52,6 @@ So I built Conductor. The complexity is in the system, not in your workflow. Beh
 The system gives Claude everything it needs to do the work *and* verify it. I trust the workflow. It just does a good job.
 
 That's what this is. No enterprise roleplay bullshit. Just an incredibly effective system for building cool stuff consistently using Claude Code.
-
-— **TÂCHES**
 
 ---
 

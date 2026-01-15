@@ -25,7 +25,7 @@ ${cyan}   ██████╗ ██████╗ ███╗   ██╗�
 
   Conductor ${dim}v${pkg.version}${reset}
   A meta-prompting, context engineering and spec-driven
-  development system for Claude Code by TÂCHES.
+  development system for Claude Code.
 `;
 
 // Parse args
