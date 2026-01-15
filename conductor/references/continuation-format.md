@@ -44,7 +44,7 @@ Standard format for presenting next steps after completing a command or workflow
 
 **02-03: Refresh Token Rotation** — Add /api/auth/refresh with sliding expiry
 
-`/conductor:execute-plan .planning/phases/02-auth/02-03-PLAN.md`
+`/dev:execute-plan .planning/phases/02-auth/02-03-PLAN.md`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -52,7 +52,7 @@ Standard format for presenting next steps after completing a command or workflow
 
 **Also available:**
 - Review plan before executing
-- `/conductor:list-phase-assumptions 2` — check assumptions
+- `/dev:list-phase-assumptions 2` — check assumptions
 
 ---
 ```
@@ -69,7 +69,7 @@ Add note that this is the last plan and what comes after:
 **02-03: Refresh Token Rotation** — Add /api/auth/refresh with sliding expiry
 <sub>Final plan in Phase 2</sub>
 
-`/conductor:execute-plan .planning/phases/02-auth/02-03-PLAN.md`
+`/dev:execute-plan .planning/phases/02-auth/02-03-PLAN.md`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -91,15 +91,15 @@ Add note that this is the last plan and what comes after:
 
 **Phase 2: Authentication** — JWT login flow with refresh tokens
 
-`/conductor:plan-phase 2`
+`/dev:plan-phase 2`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:discuss-phase 2` — gather context first
-- `/conductor:research-phase 2` — investigate unknowns
+- `/dev:discuss-phase 2` — gather context first
+- `/dev:research-phase 2` — investigate unknowns
 - Review roadmap
 
 ---
@@ -120,15 +120,15 @@ Show completion status before next action:
 
 **Phase 3: Core Features** — User dashboard, settings, and data export
 
-`/conductor:plan-phase 3`
+`/dev:plan-phase 3`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:discuss-phase 3` — gather context first
-- `/conductor:research-phase 3` — investigate unknowns
+- `/dev:discuss-phase 3` — gather context first
+- `/dev:research-phase 3` — investigate unknowns
 - Review what Phase 2 built
 
 ---
@@ -145,11 +145,11 @@ When there's no clear primary action:
 
 **Phase 3: Core Features** — User dashboard, settings, and data export
 
-**To plan directly:** `/conductor:plan-phase 3`
+**To plan directly:** `/dev:plan-phase 3`
 
-**To discuss context first:** `/conductor:discuss-phase 3`
+**To discuss context first:** `/dev:discuss-phase 3`
 
-**To research unknowns:** `/conductor:research-phase 3`
+**To research unknowns:** `/dev:research-phase 3`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -169,14 +169,14 @@ All 4 phases shipped
 
 **Plan v1.1** — Enhanced features and optimizations
 
-`/conductor:discuss-milestone`
+`/dev:discuss-milestone`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:new-milestone` — create directly if scope is clear
+- `/dev:new-milestone` — create directly if scope is clear
 - Review accomplishments before moving on
 
 ---
@@ -220,7 +220,7 @@ Extract: `**02-03: Refresh Token Rotation** — Add /api/auth/refresh with slidi
 ## To Continue
 
 Run `/clear`, then paste:
-/conductor:execute-plan .planning/phases/02-auth/02-03-PLAN.md
+/dev:execute-plan .planning/phases/02-auth/02-03-PLAN.md
 ```
 
 User has no idea what 02-03 is about.
@@ -228,7 +228,7 @@ User has no idea what 02-03 is about.
 ### Don't: Missing /clear explanation
 
 ```
-`/conductor:plan-phase 3`
+`/dev:plan-phase 3`
 
 Run /clear first.
 ```
@@ -248,7 +248,7 @@ Sounds like an afterthought. Use "Also available:" instead.
 
 ```
 ```
-/conductor:plan-phase 3
+/dev:plan-phase 3
 ```
 ```
 

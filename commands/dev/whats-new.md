@@ -1,5 +1,5 @@
 ---
-name: conductor:whats-new
+name: dev:whats-new
 description: See what's new in Conductor since your installed version
 ---
 

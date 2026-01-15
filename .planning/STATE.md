@@ -2,13 +2,13 @@
 
 ## Project Summary
 
-**Building:** Brownfield support for Conductor - `/conductor:map-codebase` workflow that analyzes existing codebases using parallel Explore agents, producing structured `.planning/codebase/` documents.
+**Building:** Brownfield support for Conductor - `/dev:map-codebase` workflow that analyzes existing codebases using parallel Explore agents, producing structured `.planning/codebase/` documents.
 
 **Core requirements:**
-- `/conductor:map-codebase` produces useful codebase documents from any codebase
+- `/dev:map-codebase` produces useful codebase documents from any codebase
 - Documents are focused (<100 lines each) and easy to update incrementally
-- `/conductor:new-project` detects existing code and offers mapping
-- `/conductor:plan-phase` loads relevant codebase context automatically
+- `/dev:new-project` detects existing code and offers mapping
+- `/dev:plan-phase` loads relevant codebase context automatically
 - Codebase map updates after plan execution
 
 **Constraints:**
@@ -93,9 +93,9 @@ None yet.
 - Phase 7 added: Backfill existing summaries with frontmatter
 - Phase 8 added: Improve roadmap system
 - Phase 9 added: Integrate verify-work (community contribution from OracleGreyBeard)
-- Phase 10 added: Parallel phase execution (rename workflow, create /conductor:execute-phase with parallelization)
+- Phase 10 added: Parallel phase execution (rename workflow, create /dev:execute-phase with parallelization)
 - Phase 11 added: Parallel-aware planning (update plan-phase.md to create parallelizable plans when enabled)
-- Phase 12 added: Changelog & update awareness (remote changelog fetch, /conductor:whats-new, publish workflow integration)
+- Phase 12 added: Changelog & update awareness (remote changelog fetch, /dev:whats-new, publish workflow integration)
 
 ## Project Alignment
 

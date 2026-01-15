@@ -433,7 +433,7 @@ Next: Phase [X+1] — [Name]
 ⚡ Auto-continuing: Plan Phase [X+1] in detail
 ```
 
-Exit skill and invoke SlashCommand("/conductor:plan-phase [X+1]")
+Exit skill and invoke SlashCommand("/dev:plan-phase [X+1]")
 
 </if>
 
@@ -448,15 +448,15 @@ Exit skill and invoke SlashCommand("/conductor:plan-phase [X+1]")
 
 **Phase [X+1]: [Name]** — [Goal from ROADMAP.md]
 
-`/conductor:plan-phase [X+1]`
+`/dev:plan-phase [X+1]`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:discuss-phase [X+1]` — gather context first
-- `/conductor:research-phase [X+1]` — investigate unknowns
+- `/dev:discuss-phase [X+1]` — gather context first
+- `/dev:research-phase [X+1]` — investigate unknowns
 - Review roadmap
 
 ---
@@ -478,7 +478,7 @@ Phase {X} marked complete.
 ⚡ Auto-continuing: Complete milestone and archive
 ```
 
-Exit skill and invoke SlashCommand("/conductor:complete-milestone {version}")
+Exit skill and invoke SlashCommand("/dev:complete-milestone {version}")
 
 </if>
 
@@ -495,7 +495,7 @@ Exit skill and invoke SlashCommand("/conductor:complete-milestone {version}")
 
 **Complete Milestone {version}** — archive and prepare for next
 
-`/conductor:complete-milestone {version}`
+`/dev:complete-milestone {version}`
 
 <sub>`/clear` first → fresh context window</sub>
 

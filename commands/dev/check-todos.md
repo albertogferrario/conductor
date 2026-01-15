@@ -1,5 +1,5 @@
 ---
-name: conductor:check-todos
+name: dev:check-todos
 description: List pending todos and select one to work on
 argument-hint: [area filter]
 allowed-tools:
@@ -33,14 +33,14 @@ If count is 0:
 ```
 No pending todos.
 
-Todos are captured during work sessions with /conductor:add-todo.
+Todos are captured during work sessions with /dev:add-todo.
 
 ---
 
 Would you like to:
 
-1. Continue with current phase (/conductor:progress)
-2. Add a todo now (/conductor:add-todo)
+1. Continue with current phase (/dev:progress)
+2. Add a todo now (/dev:add-todo)
 ```
 
 Exit.
@@ -48,8 +48,8 @@ Exit.
 
 <step name="parse_filter">
 Check for area filter in arguments:
-- `/conductor:check-todos` → show all
-- `/conductor:check-todos api` → filter to area:api only
+- `/dev:check-todos` → show all
+- `/dev:check-todos api` → filter to area:api only
 </step>
 
 <step name="list_todos">
@@ -74,7 +74,7 @@ Pending Todos:
 ---
 
 Reply with a number to view details, or:
-- `/conductor:check-todos [area]` to filter by area
+- `/dev:check-todos [area]` to filter by area
 - `q` to exit
 ```
 
@@ -138,7 +138,7 @@ Use AskUserQuestion:
 - question: "What would you like to do with this todo?"
 - options:
   - "Work on it now" — move to done, start working
-  - "Create a phase" — /conductor:add-phase with this scope
+  - "Create a phase" — /dev:add-phase with this scope
   - "Brainstorm approach" — think through before deciding
   - "Put it back" — return to list
 </step>
@@ -154,7 +154,7 @@ Update STATE.md todo count. Present problem/solution context. Begin work or ask 
 Note todo reference in phase planning notes. Keep in pending. Return to list or exit.
 
 **Create a phase:**
-Display: `/conductor:add-phase [description from todo]`
+Display: `/dev:add-phase [description from todo]`
 Keep in pending. User runs command in fresh context.
 
 **Brainstorm approach:**
@@ -202,7 +202,7 @@ Confirm: "Committed: docs: start work on todo - [title]"
 <anti_patterns>
 - Don't delete todos — move to done/ when work begins
 - Don't start work without moving to done/ first
-- Don't create plans from this command — route to /conductor:plan-phase or /conductor:add-phase
+- Don't create plans from this command — route to /dev:plan-phase or /dev:add-phase
 </anti_patterns>
 
 <success_criteria>

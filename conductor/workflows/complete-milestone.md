@@ -572,14 +572,14 @@ Tag: v[X.Y]
 
 **Plan Next Milestone** — define v[X.Y+1] features and scope
 
-`/conductor:discuss-milestone`
+`/dev:discuss-milestone`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:new-milestone` — create directly if scope is clear
+- `/dev:new-milestone` — create directly if scope is clear
 
 ---
 ```

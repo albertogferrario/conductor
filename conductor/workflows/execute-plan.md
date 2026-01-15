@@ -1184,7 +1184,7 @@ You will NOT be resumed. A new agent continues from where you stopped, using you
 
 **How to know if you were spawned:**
 
-If you're reading this workflow because an orchestrator spawned you (vs running directly from /conductor:execute-plan), the orchestrator's prompt will include checkpoint return instructions. Follow those instructions when you hit a checkpoint.
+If you're reading this workflow because an orchestrator spawned you (vs running directly from /dev:execute-plan), the orchestrator's prompt will include checkpoint return instructions. Follow those instructions when you hit a checkpoint.
 
 **If running in main context (not spawned):**
 
@@ -1689,14 +1689,14 @@ Summary: .planning/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
 
 **{phase}-{next-plan}: [Plan Name]** — [objective from next PLAN.md]
 
-`/conductor:execute-plan .planning/phases/{phase-dir}/{phase}-{next-plan}-PLAN.md`
+`/dev:execute-plan .planning/phases/{phase-dir}/{phase}-{next-plan}-PLAN.md`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work {phase}-{plan}` — manual acceptance testing before continuing
+- `/dev:verify-work {phase}-{plan}` — manual acceptance testing before continuing
 - Review what was built before continuing
 
 ---
@@ -1750,16 +1750,16 @@ All {Y} plans finished.
 
 **Phase {Z+1}: {Next Phase Name}** — {Goal from ROADMAP.md}
 
-`/conductor:plan-phase {Z+1}`
+`/dev:plan-phase {Z+1}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work {Z}` — manual acceptance testing before continuing
-- `/conductor:discuss-phase {Z+1}` — gather context first
-- `/conductor:research-phase {Z+1}` — investigate unknowns
+- `/dev:verify-work {Z}` — manual acceptance testing before continuing
+- `/dev:discuss-phase {Z+1}` — gather context first
+- `/dev:research-phase {Z+1}` — investigate unknowns
 - Review phase accomplishments before continuing
 
 ---
@@ -1790,15 +1790,15 @@ Milestone is 100% done.
 
 **Complete Milestone** — archive and prepare for next
 
-`/conductor:complete-milestone`
+`/dev:complete-milestone`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work` — manual acceptance testing before completing milestone
-- `/conductor:add-phase <description>` — add another phase before completing
+- `/dev:verify-work` — manual acceptance testing before completing milestone
+- `/dev:add-phase <description>` — add another phase before completing
 - Review accomplishments before archiving
 
 ---

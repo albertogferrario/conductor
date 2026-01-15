@@ -6,12 +6,12 @@ Analyzes plan dependencies to identify independent plans that can run in paralle
 </purpose>
 
 <when_to_use>
-Use /conductor:execute-phase when:
+Use /dev:execute-phase when:
 - Phase has multiple unexecuted plans (2+)
 - Want "walk away, come back to completed work" execution
 - Plans have clear dependency boundaries
 
-Use /conductor:execute-plan when:
+Use /dev:execute-plan when:
 - Executing a single specific plan
 - Want sequential, interactive execution
 - Need checkpoint interactions
@@ -53,8 +53,8 @@ Options:
 
 **1. Parse phase argument:**
 ```bash
-# From command argument: /conductor:execute-phase 10
-# Or: /conductor:execute-phase .planning/phases/10-parallel-execution/
+# From command argument: /dev:execute-phase 10
+# Or: /dev:execute-phase .planning/phases/10-parallel-execution/
 PHASE_ARG="$1"
 ```
 
@@ -97,7 +97,7 @@ echo "Unexecuted: ${#UNEXECUTED[@]} plans"
 | Condition | Action |
 |-----------|--------|
 | 0 unexecuted plans | "All plans complete. Nothing to execute." |
-| 1 unexecuted plan | "Single plan - use /conductor:execute-plan instead" |
+| 1 unexecuted plan | "Single plan - use /dev:execute-plan instead" |
 | 2+ unexecuted plans | Proceed to dependency analysis |
 
 </step>
@@ -362,7 +362,7 @@ cat .planning/config.json 2>/dev/null
 
 **If parallelization.enabled is false:**
 - Fall back to sequential execution
-- Use /conductor:execute-plan for each plan in order
+- Use /dev:execute-plan for each plan in order
 
 **Checkpoint handling modes:**
 - `foreground`: Plans with checkpoints run in foreground (not parallel)
@@ -780,7 +780,7 @@ Since agents commit independently, git will catch conflicts at commit time if th
 The dependency analysis step should prevent this, but if an agent fails to commit due to conflict:
 - That agent's status will be "failed"
 - Other agents continue normally
-- User can resolve and retry the failed plan with /conductor:execute-plan
+- User can resolve and retry the failed plan with /dev:execute-plan
 </step>
 
 <step name="create_phase_summary">
@@ -841,15 +841,15 @@ All {N} plans finished via parallel execution.
 
 **Phase {X+1}: {Next Phase Name}** — {Goal from ROADMAP.md}
 
-`/conductor:plan-phase {X+1}`
+`/dev:plan-phase {X+1}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work {X}` — manual acceptance testing
-- `/conductor:discuss-phase {X+1}` — gather context first
+- `/dev:verify-work {X}` — manual acceptance testing
+- `/dev:discuss-phase {X+1}` — gather context first
 ```
 
 **If milestone complete:**
@@ -858,7 +858,7 @@ All {N} plans finished via parallel execution.
 
 All {N} phases finished.
 
-`/conductor:complete-milestone`
+`/dev:complete-milestone`
 ```
 </step>
 
@@ -868,7 +868,7 @@ All {N} phases finished.
 
 **Agent failure during parallel execution:**
 - Log failure but continue with other agents
-- Failed plans can be retried individually with /conductor:execute-plan
+- Failed plans can be retried individually with /dev:execute-plan
 - Do not automatically retry (may cause cascade failures)
 
 **Merge conflict detected:**
@@ -876,7 +876,7 @@ All {N} phases finished.
 - Present conflicting files to user
 - Options:
   1. Manual resolution
-  2. Re-run sequential with /conductor:execute-plan
+  2. Re-run sequential with /dev:execute-plan
 
 **Max concurrent limit reached:**
 - Queue excess plans

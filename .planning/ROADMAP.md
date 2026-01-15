@@ -2,7 +2,7 @@
 
 ## Overview
 
-Add comprehensive brownfield support to Conductor. Users adopting Conductor for existing codebases will have a systematic way to capture architectural knowledge before planning begins. A new `/conductor:map-codebase` workflow will produce structured `.planning/codebase/` documents that stay current as plans execute.
+Add comprehensive brownfield support to Conductor. Users adopting Conductor for existing codebases will have a systematic way to capture architectural knowledge before planning begins. A new `/dev:map-codebase` workflow will produce structured `.planning/codebase/` documents that stay current as plans execute.
 
 ## Domain Expertise
 
@@ -15,11 +15,11 @@ None - this is internal Conductor development following existing command/workflo
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [ ] **Phase 1: Templates & Structure** - Create codebase map templates and folder structure
-- [ ] **Phase 2: Map Codebase Command** - Build /conductor:map-codebase with parallel Explore agents
+- [ ] **Phase 2: Map Codebase Command** - Build /dev:map-codebase with parallel Explore agents
 - [ ] **Phase 3: Integration** - Wire brownfield support into existing Conductor workflows
 - [x] **Phase 10: Parallel Phase Execution** - Separate single-plan vs multi-plan execution with intelligent parallelization
 - [x] **Phase 11: Parallel-Aware Planning** - Update plan-phase.md to create parallelizable plans when config enables it
-- [ ] **Phase 12: Changelog & Update Awareness** - Add changelog generation and /conductor:whats-new for version discovery
+- [ ] **Phase 12: Changelog & Update Awareness** - Add changelog generation and /dev:whats-new for version discovery
 - [x] **Phase 99: Test Parallel (THROWAWAY)** - Create 3 silly independent files to test parallel execution
 
 ## Phase Details
@@ -40,7 +40,7 @@ Documents to template:
 - concerns.md (tech debt, known issues)
 
 ### Phase 2: Map Codebase Command
-**Goal**: Build the /conductor:map-codebase slash command with parallel Explore agent workflow
+**Goal**: Build the /dev:map-codebase slash command with parallel Explore agent workflow
 **Depends on**: Phase 1
 **Research**: Unlikely (using existing Explore agent patterns, Conductor workflow conventions)
 **Plans**: TBD
@@ -58,12 +58,12 @@ Components:
 **Plans**: TBD
 
 Integration points:
-- `/conductor:new-project` - detect existing code, offer to map first
-- `/conductor:plan-phase` - load relevant codebase context automatically
+- `/dev:new-project` - detect existing code, offer to map first
+- `/dev:plan-phase` - load relevant codebase context automatically
 - Post-execution - update codebase map after plan execution
 
 ### Phase 4: Plan-Phase Optimizations
-**Goal**: Reduce context usage in /conductor:plan-phase by ~37% through file consolidation and verbosity reduction
+**Goal**: Reduce context usage in /dev:plan-phase by ~37% through file consolidation and verbosity reduction
 **Depends on**: Phase 3
 **Research**: Unlikely (internal optimization of existing files)
 **Plans**: TBD
@@ -122,14 +122,14 @@ Enable intelligent context assembly for all historical phases by adding consiste
 **Plans:** TBD
 
 Plans:
-- [ ] TBD (run /conductor:plan-phase 8 to break down)
+- [ ] TBD (run /dev:plan-phase 8 to break down)
 
 **Details:**
 [To be added during planning]
 
 ### Phase 9: Integrate Verify-Work
 
-**Goal:** Properly integrate /conductor:verify-work into Conductor with workflow delegation, templates, and /conductor:plan-fix command
+**Goal:** Properly integrate /dev:verify-work into Conductor with workflow delegation, templates, and /dev:plan-fix command
 **Depends on:** Phase 8
 **Research:** Unlikely (refactoring contributed command to match Conductor patterns)
 **Plans:** TBD
@@ -143,7 +143,7 @@ Components:
 - Update README.md with new commands
 
 **Details:**
-Community contribution from OracleGreyBeard. Original command works but doesn't follow Conductor patterns (no workflow delegation, inline templates, verbose steps). Refactor to match conventions, then add /conductor:plan-fix to complete the verify → fix loop.
+Community contribution from OracleGreyBeard. Original command works but doesn't follow Conductor patterns (no workflow delegation, inline templates, verbose steps). Refactor to match conventions, then add /dev:plan-fix to complete the verify → fix loop.
 
 ### Phase 10: Parallel Phase Execution
 
@@ -160,8 +160,8 @@ Plans:
 
 **Details:**
 Structural refactoring to separate concerns:
-- `/conductor:execute-plan` executes a single PLAN.md (current behavior, ~1,700 lines)
-- `/conductor:execute-phase` executes all plans in a phase with intelligent parallelization (~1,300 lines)
+- `/dev:execute-plan` executes a single PLAN.md (current behavior, ~1,700 lines)
+- `/dev:execute-phase` executes all plans in a phase with intelligent parallelization (~1,300 lines)
 
 Parallelization features (adapted from PR #43):
 - Dependency analysis via `requires`/`provides` frontmatter + `<files>` overlap detection
@@ -194,7 +194,7 @@ This enables execute-phase to produce more Wave 1 plans (true independence) inst
 
 ### Phase 12: Changelog & Update Awareness
 
-**Goal:** Add changelog generation to publish workflow and `/conductor:whats-new` command for users to discover changes
+**Goal:** Add changelog generation to publish workflow and `/dev:whats-new` command for users to discover changes
 **Depends on:** Phase 11
 **Research:** Unlikely (straightforward command + workflow additions)
 **Plans:** 3 plans
@@ -202,14 +202,14 @@ This enables execute-phase to produce more Wave 1 plans (true independence) inst
 Plans:
 - [x] 12-01: CHANGELOG.md foundation - Create changelog file, update installer to copy it
 - [ ] 12-02: Publish command update - Add changelog generation to gsd-publish-version.md
-- [x] 12-03: whats-new command - Create /conductor:whats-new with remote fetch and version comparison
+- [x] 12-03: whats-new command - Create /dev:whats-new with remote fetch and version comparison
 
 **Wave structure:**
 - Wave 1: 12-01 (foundation)
 - Wave 2: 12-02, 12-03 (parallel - both depend only on 12-01)
 
 **Details:**
-Users adopting Conductor need visibility into what changed between versions. The publish workflow generates curated changelog entries (Claude-drafted, Lex-approved). `/conductor:whats-new` fetches from GitHub raw, compares to installed version, and prompts to update if behind.
+Users adopting Conductor need visibility into what changed between versions. The publish workflow generates curated changelog entries (Claude-drafted, Lex-approved). `/dev:whats-new` fetches from GitHub raw, compares to installed version, and prompts to update if behind.
 
 ### Phase 99: Test Parallel (THROWAWAY)
 

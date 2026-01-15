@@ -58,7 +58,7 @@
     <text class="text" font-size="15" y="284"><tspan class="green">  ✓</tspan><tspan class="white"> Installed conductor</tspan></text>
 
     <!-- Done message -->
-    <text class="text" font-size="15" y="332"><tspan class="green">  Done!</tspan><tspan class="white"> Run </tspan><tspan class="cyan">/conductor:help</tspan><tspan class="white"> to get started.</tspan></text>
+    <text class="text" font-size="15" y="332"><tspan class="green">  Done!</tspan><tspan class="white"> Run </tspan><tspan class="cyan">/dev:help</tspan><tspan class="white"> to get started.</tspan></text>
 
     <!-- New prompt -->
     <text class="text prompt" font-size="15" y="380">~</text>

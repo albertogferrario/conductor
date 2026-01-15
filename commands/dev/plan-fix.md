@@ -1,5 +1,5 @@
 ---
-name: conductor:plan-fix
+name: dev:plan-fix
 description: Plan fixes for UAT issues from verify-work
 argument-hint: "<phase, e.g., '4'>"
 allowed-tools:
@@ -42,7 +42,7 @@ If no argument provided:
 ```
 Error: Phase number required.
 
-Usage: /conductor:plan-fix 4
+Usage: /dev:plan-fix 4
 
 This creates a fix plan from .planning/phases/04-name/04-UAT.md
 ```
@@ -60,8 +60,8 @@ If not found:
 ```
 No UAT.md found for phase {phase}.
 
-UAT.md files are created by /conductor:verify-work during testing.
-Run /conductor:verify-work {phase} first.
+UAT.md files are created by /dev:verify-work during testing.
+Run /dev:verify-work {phase} first.
 ```
 Exit.
 
@@ -69,7 +69,7 @@ If found but status is "testing":
 ```
 UAT session still in progress.
 
-Run /conductor:verify-work to complete testing first.
+Run /dev:verify-work to complete testing first.
 ```
 Exit.
 </step>
@@ -77,7 +77,7 @@ Exit.
 <step name="read">
 **Read issues from UAT.md:**
 
-Read the "Issues for /conductor:plan-fix" section.
+Read the "Issues for /dev:plan-fix" section.
 
 If section is empty or says "[none yet]":
 ```
@@ -214,7 +214,7 @@ Before declaring plan complete:
 <success_criteria>
 - All UAT issues from {phase}-UAT.md addressed
 - Tests pass
-- Ready for re-verification with /conductor:verify-work {phase}
+- Ready for re-verification with /dev:verify-work {phase}
 </success_criteria>
 
 <output>
@@ -248,7 +248,7 @@ Use AskUserQuestion:
   - "Done for now" — Come back later
 
 **If "Execute fix plan":**
-Invoke `/conductor:execute-plan .planning/phases/XX-name/{phase}-FIX.md`
+Invoke `/dev:execute-plan .planning/phases/XX-name/{phase}-FIX.md`
 
 **If "Review plan first":**
 Display the plan contents, then ask again whether to execute.
@@ -256,7 +256,7 @@ Display the plan contents, then ask again whether to execute.
 **If "Done for now":**
 ```
 Fix plan saved. Run when ready:
-`/conductor:execute-plan .planning/phases/XX-name/{phase}-FIX.md`
+`/dev:execute-plan .planning/phases/XX-name/{phase}-FIX.md`
 ```
 </step>
 

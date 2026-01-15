@@ -37,7 +37,7 @@ Use semantic tags: `<objective>`, `<verification>`, `<action>`, `<process>`
 | Type | Convention | Example |
 |------|------------|---------|
 | Files | kebab-case | `execute-phase.md` |
-| Commands | `conductor:kebab-case` | `conductor:execute-phase` |
+| Commands | `dev:kebab-case` | `dev:execute-phase` |
 | Step names | snake_case | `name="load_project_state"` |
 | Bash variables | CAPS_UNDERSCORES | `PHASE_ARG` |
 | Type attributes | colon separator | `type="checkpoint:human-verify"` |

@@ -1,5 +1,5 @@
 ---
-name: conductor:debug
+name: dev:debug
 description: Systematic debugging with persistent state across context resets
 argument-hint: [issue description]
 allowed-tools:
@@ -96,7 +96,7 @@ Task(
 - Display root cause and evidence summary
 - Offer options:
   - "Fix now" → spawn fix subagent
-  - "Plan fix" → suggest /conductor:plan-fix
+  - "Plan fix" → suggest /dev:plan-fix
   - "Manual fix" → done
 
 **If `## CHECKPOINT REACHED`:**

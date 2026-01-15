@@ -1,5 +1,5 @@
 ---
-name: conductor:map-codebase
+name: dev:map-codebase
 description: Analyze codebase with parallel Explore agents to produce .planning/codebase/ documents
 argument-hint: "[optional: specific area to map, e.g., 'api' or 'auth']"
 allowed-tools:
@@ -37,8 +37,8 @@ Focus area: $ARGUMENTS (optional - if provided, tells agents to focus on specifi
 Check for .planning/STATE.md - loads context if project already initialized
 
 **This command can run:**
-- Before /conductor:new-project (brownfield codebases) - creates codebase map first
-- After /conductor:new-project (greenfield codebases) - updates codebase map as code evolves
+- Before /dev:new-project (brownfield codebases) - creates codebase map first
+- After /dev:new-project (greenfield codebases) - updates codebase map as code evolves
 - Anytime to refresh codebase understanding
 </context>
 
@@ -72,7 +72,7 @@ Check for .planning/STATE.md - loads context if project already initialized
    - TESTING.md - Test structure, coverage, practices
    - INTEGRATIONS.md - APIs, databases, external services
    - CONCERNS.md - Technical debt, risks, issues
-6. Offer next steps (typically: /conductor:new-project or /conductor:plan-phase)
+6. Offer next steps (typically: /dev:new-project or /dev:plan-phase)
 </process>
 
 <success_criteria>

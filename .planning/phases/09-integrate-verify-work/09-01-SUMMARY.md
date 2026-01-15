@@ -91,7 +91,7 @@ None
 ## Next Phase Readiness
 
 - verify-work workflow ready for use
-- Next: Create `/conductor:plan-fix` command to complete verify → fix loop
+- Next: Create `/dev:plan-fix` command to complete verify → fix loop
 - README.md update needed to document new commands
 
 ---

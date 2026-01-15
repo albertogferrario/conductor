@@ -11,7 +11,7 @@ requires:
     provides: execute-phase.md parallel workflow
 
 provides:
-  - /conductor:execute-phase slash command
+  - /dev:execute-phase slash command
   - parallelization config schema in config.json
   - command documentation in README.md and help.md
 
@@ -44,7 +44,7 @@ completed: 2026-01-12
 
 # Phase 10 Plan 03: Create Execute-Phase Command Summary
 
-**New /conductor:execute-phase command with parallelization config and documentation for parallel "walk away" phase execution.**
+**New /dev:execute-phase command with parallelization config and documentation for parallel "walk away" phase execution.**
 
 ## Performance
 
@@ -56,7 +56,7 @@ completed: 2026-01-12
 
 ## Accomplishments
 
-- Created /conductor:execute-phase slash command that references execute-phase.md workflow
+- Created /dev:execute-phase slash command that references execute-phase.md workflow
 - Added parallelization configuration section to config.json template
 - Updated README.md and help.md with new command documentation
 
@@ -78,7 +78,7 @@ Each task was committed atomically:
 ## Decisions Made
 
 - Config schema uses dedicated `parallelization` section with `plan_level`/`task_level` flags for future extensibility
-- Documentation explicitly explains when to use `/conductor:execute-plan` vs `/conductor:execute-phase`
+- Documentation explicitly explains when to use `/dev:execute-plan` vs `/dev:execute-phase`
 
 ## Deviations from Plan
 

@@ -91,7 +91,7 @@ None
 
 - Phase 11: Parallel-Aware Planning complete
 - All 4 plans finished (template, workflow, execute-phase, documentation)
-- Milestone complete - ready for `/conductor:complete-milestone`
+- Milestone complete - ready for `/dev:complete-milestone`
 
 ---
 *Phase: 11-parallel-aware-planning*

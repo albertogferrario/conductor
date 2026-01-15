@@ -24,8 +24,8 @@ Current milestone in progress: v[X.Y] [Name]
 Phases [N]-[M], [P]% complete
 
 Did you want to:
-1. Complete current milestone first (/conductor:complete-milestone)
-2. Add phases to current milestone (/conductor:add-phase)
+1. Complete current milestone first (/dev:complete-milestone)
+2. Add phases to current milestone (/dev:add-phase)
 3. Continue anyway - discuss next milestone scope
 
 ```
@@ -113,7 +113,7 @@ Use AskUserQuestion:
 - header: "Ready?"
 - question: "Ready to create the milestone, or explore more?"
 - options (ALL THREE REQUIRED):
-  - "Create milestone" - Proceed to /conductor:new-milestone
+  - "Create milestone" - Proceed to /dev:new-milestone
   - "Ask more questions" - Help me think through this more
   - "Let me add context" - I have more to share
 
@@ -142,7 +142,7 @@ cat > .planning/MILESTONE-CONTEXT.md << 'EOF'
 # Milestone Context
 
 **Generated:** [today's date]
-**Status:** Ready for /conductor:new-milestone
+**Status:** Ready for /dev:new-milestone
 
 <features>
 ## Features to Build
@@ -187,7 +187,7 @@ cat > .planning/MILESTONE-CONTEXT.md << 'EOF'
 
 ---
 
-*This file is temporary. It will be deleted after /conductor:new-milestone creates the milestone.*
+*This file is temporary. It will be deleted after /dev:new-milestone creates the milestone.*
 EOF
 ```
 </step>
@@ -214,7 +214,7 @@ Context saved to `.planning/MILESTONE-CONTEXT.md`
 
 **Create Milestone v[X.Y]** — [Theme Name]
 
-`/conductor:new-milestone`
+`/dev:new-milestone`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -232,5 +232,5 @@ Context saved to `.planning/MILESTONE-CONTEXT.md`
 - Features explored with clarifying questions
 - Scope synthesized from features (not asked abstractly)
 - **MILESTONE-CONTEXT.md created** with features, scope, and phase mapping
-- Context handed off to /conductor:new-milestone
+- Context handed off to /dev:new-milestone
 </success_criteria>

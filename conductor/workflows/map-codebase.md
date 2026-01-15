@@ -403,14 +403,14 @@ Created .planning/codebase/:
 
 **Initialize project** — use codebase context for planning
 
-`/conductor:new-project`
+`/dev:new-project`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- Re-run mapping: `/conductor:map-codebase`
+- Re-run mapping: `/dev:map-codebase`
 - Review specific file: `cat .planning/codebase/STACK.md`
 - Edit any document before proceeding
 

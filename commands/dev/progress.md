@@ -1,5 +1,5 @@
 ---
-name: conductor:progress
+name: dev:progress
 description: Check project progress, show context, and route to next action (execute or plan)
 allowed-tools:
   - Read
@@ -26,12 +26,12 @@ If no `.planning/` directory:
 ```
 No planning structure found.
 
-Run /conductor:new-project to start a new project.
+Run /dev:new-project to start a new project.
 ```
 
 Exit.
 
-If missing STATE.md or ROADMAP.md: inform what's missing, suggest running `/conductor:new-project`.
+If missing STATE.md or ROADMAP.md: inform what's missing, suggest running `/dev:new-project`.
 </step>
 
 <step name="load">
@@ -86,10 +86,10 @@ CONTEXT: [✓ if CONTEXT.md exists | - if not]
 - [any blockers or concerns from STATE.md]
 
 ## Pending Todos
-- [count] pending — /conductor:check-todos to review
+- [count] pending — /dev:check-todos to review
 
 ## Active Debug Sessions
-- [count] active — /conductor:debug to continue
+- [count] active — /dev:debug to continue
 (Only show this section if count > 0)
 
 ## What's Next
@@ -148,7 +148,7 @@ Read its `<objective>` section.
 
 **{phase}-{plan}: [Plan Name]** — [objective summary from PLAN.md]
 
-`/conductor:execute-plan [full-path-to-PLAN.md]`
+`/dev:execute-plan [full-path-to-PLAN.md]`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -171,7 +171,7 @@ Check if `{phase}-CONTEXT.md` exists in phase directory.
 **Phase {N}: {Name}** — {Goal from ROADMAP.md}
 <sub>✓ Context gathered, ready to plan</sub>
 
-`/conductor:plan-phase {phase-number}`
+`/dev:plan-phase {phase-number}`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -187,16 +187,16 @@ Check if `{phase}-CONTEXT.md` exists in phase directory.
 
 **Phase {N}: {Name}** — {Goal from ROADMAP.md}
 
-`/conductor:plan-phase {phase}`
+`/dev:plan-phase {phase}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:discuss-phase {phase}` — gather context first
-- `/conductor:research-phase {phase}` — investigate unknowns
-- `/conductor:list-phase-assumptions {phase}` — see Claude's assumptions
+- `/dev:discuss-phase {phase}` — gather context first
+- `/dev:research-phase {phase}` — investigate unknowns
+- `/dev:list-phase-assumptions {phase}` — see Claude's assumptions
 
 ---
 ```
@@ -214,15 +214,15 @@ ISSUES.md exists without matching FIX.md. User needs to plan fixes.
 
 **{plan}-ISSUES.md** has {N} issues without a fix plan.
 
-`/conductor:plan-fix {plan}`
+`/dev:plan-fix {plan}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:execute-plan [path]` — continue with other work first
-- `/conductor:verify-work {phase}` — run more UAT testing
+- `/dev:execute-plan [path]` — continue with other work first
+- `/dev:verify-work {phase}` — run more UAT testing
 
 ---
 ```
@@ -261,16 +261,16 @@ Read ROADMAP.md to get the next phase's name and goal.
 
 **Phase {Z+1}: {Name}** — {Goal from ROADMAP.md}
 
-`/conductor:plan-phase {Z+1}`
+`/dev:plan-phase {Z+1}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work {Z}` — user acceptance test before continuing
-- `/conductor:discuss-phase {Z+1}` — gather context first
-- `/conductor:research-phase {Z+1}` — investigate unknowns
+- `/dev:verify-work {Z}` — user acceptance test before continuing
+- `/dev:discuss-phase {Z+1}` — gather context first
+- `/dev:research-phase {Z+1}` — investigate unknowns
 
 ---
 ```
@@ -290,14 +290,14 @@ All {N} phases finished!
 
 **Complete Milestone** — archive and prepare for next
 
-`/conductor:complete-milestone`
+`/dev:complete-milestone`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work` — user acceptance test before completing milestone
+- `/dev:verify-work` — user acceptance test before completing milestone
 
 ---
 ```
@@ -307,10 +307,10 @@ All {N} phases finished!
 <step name="edge_cases">
 **Handle edge cases:**
 
-- Phase complete but next phase not planned → offer `/conductor:plan-phase [next]`
+- Phase complete but next phase not planned → offer `/dev:plan-phase [next]`
 - All work complete → offer milestone completion
 - Blockers present → highlight before offering to continue
-- Handoff file exists → mention it, offer `/conductor:resume-work`
+- Handoff file exists → mention it, offer `/dev:resume-work`
   </step>
 
 </process>
@@ -320,7 +320,7 @@ All {N} phases finished!
 - [ ] Rich context provided (recent work, decisions, issues)
 - [ ] Current position clear with visual progress
 - [ ] What's next clearly explained
-- [ ] Smart routing: /conductor:execute-plan if plan exists, /conductor:plan-phase if not
+- [ ] Smart routing: /dev:execute-plan if plan exists, /dev:plan-phase if not
 - [ ] User confirms before any action
 - [ ] Seamless handoff to appropriate gsd command
       </success_criteria>

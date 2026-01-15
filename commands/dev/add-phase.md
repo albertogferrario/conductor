@@ -1,5 +1,5 @@
 ---
-name: conductor:add-phase
+name: dev:add-phase
 description: Add phase to end of current milestone in roadmap
 argument-hint: <description>
 allowed-tools:
@@ -26,15 +26,15 @@ Purpose: Add planned work discovered during execution that belongs at the end of
 <step name="parse_arguments">
 Parse the command arguments:
 - All arguments become the phase description
-- Example: `/conductor:add-phase Add authentication` → description = "Add authentication"
-- Example: `/conductor:add-phase Fix critical performance issues` → description = "Fix critical performance issues"
+- Example: `/dev:add-phase Add authentication` → description = "Add authentication"
+- Example: `/dev:add-phase Fix critical performance issues` → description = "Fix critical performance issues"
 
 If no arguments provided:
 
 ```
 ERROR: Phase description required
-Usage: /conductor:add-phase <description>
-Example: /conductor:add-phase Add authentication system
+Usage: /dev:add-phase <description>
+Example: /dev:add-phase Add authentication system
 ```
 
 Exit.
@@ -128,7 +128,7 @@ Add the new phase entry to the roadmap:
    **Plans:** 0 plans
 
    Plans:
-   - [ ] TBD (run /conductor:plan-phase {N} to break down)
+   - [ ] TBD (run /dev:plan-phase {N} to break down)
 
    **Details:**
    [To be added during planning]
@@ -170,14 +170,14 @@ Project state updated: .planning/STATE.md
 
 **Phase {N}: {description}**
 
-`/conductor:plan-phase {N}`
+`/dev:plan-phase {N}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:add-phase <description>` — add another phase
+- `/dev:add-phase <description>` — add another phase
 - Review roadmap
 
 ---
@@ -190,8 +190,8 @@ Project state updated: .planning/STATE.md
 
 - Don't modify phases outside current milestone
 - Don't renumber existing phases
-- Don't use decimal numbering (that's /conductor:insert-phase)
-- Don't create plans yet (that's /conductor:plan-phase)
+- Don't use decimal numbering (that's /dev:insert-phase)
+- Don't create plans yet (that's /dev:plan-phase)
 - Don't commit changes (user decides when to commit)
   </anti_patterns>
 

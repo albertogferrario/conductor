@@ -75,7 +75,7 @@ People who want to describe what they want and have it built correctly — witho
 npx conductor-cc
 ```
 
-That's it. Verify with `/conductor:help` inside your Claude Code interface.
+That's it. Verify with `/dev:help` inside your Claude Code interface.
 
 <details>
 <summary><strong>Non-interactive Install (Docker, CI, Scripts)</strong></summary>
@@ -155,7 +155,7 @@ If you prefer not to use that flag, add this to your project's `.claude/settings
 ### 1. Start with an idea
 
 ```
-/conductor:new-project
+/dev:new-project
 ```
 
 The system asks questions. Keeps asking until it has everything — your goals, constraints, tech preferences, edge cases. You go back and forth until the idea is fully captured. Creates **PROJECT.md**.
@@ -163,7 +163,7 @@ The system asks questions. Keeps asking until it has everything — your goals, 
 ### 2. Create roadmap
 
 ```
-/conductor:create-roadmap
+/dev:create-roadmap
 ```
 
 Produces:
@@ -173,25 +173,25 @@ Produces:
 ### 3. Plan and execute phases
 
 ```
-/conductor:plan-phase 1      # System creates atomic task plans
-/conductor:execute-phase 1   # Parallel agents execute all plans
+/dev:plan-phase 1      # System creates atomic task plans
+/dev:execute-phase 1   # Parallel agents execute all plans
 ```
 
 Each phase breaks into 2-3 task plans. Each plan runs in a fresh subagent context — 200k tokens purely for implementation, zero degradation. Plans without dependencies run in parallel.
 
 **For single-plan or interactive execution:**
 ```
-/conductor:execute-plan      # Run one plan at a time with checkpoints
+/dev:execute-plan      # Run one plan at a time with checkpoints
 ```
 
-Use `/conductor:execute-phase` for parallel "walk away" automation (recommended). Use `/conductor:execute-plan` when you need interactive single-plan execution with manual checkpoints.
+Use `/dev:execute-phase` for parallel "walk away" automation (recommended). Use `/dev:execute-plan` when you need interactive single-plan execution with manual checkpoints.
 
 ### 4. Ship and iterate
 
 ```
-/conductor:complete-milestone   # Archive v1, prep for v2
-/conductor:add-phase            # Append new work
-/conductor:insert-phase 2       # Slip urgent work between phases
+/dev:complete-milestone   # Archive v1, prep for v2
+/dev:add-phase            # Append new work
+/dev:insert-phase 2       # Slip urgent work between phases
 ```
 
 Ship your MVP in a day. Add features. Insert hotfixes. The system stays modular — you're never stuck.
@@ -205,7 +205,7 @@ Already have code? Start here instead.
 ### 1. Map the codebase
 
 ```
-/conductor:map-codebase
+/dev:map-codebase
 ```
 
 Spawns parallel agents to analyze your code. Creates `.planning/codebase/` with 7 documents:
@@ -223,14 +223,14 @@ Spawns parallel agents to analyze your code. Creates `.planning/codebase/` with 
 ### 2. Initialize project
 
 ```
-/conductor:new-project
+/dev:new-project
 ```
 
 Same as greenfield, but the system knows your codebase. Questions focus on what you're adding/changing, not starting from scratch.
 
 ### 3. Continue as normal
 
-From here, it's the same: `/conductor:create-roadmap` → `/conductor:plan-phase` → `/conductor:execute-phase`
+From here, it's the same: `/dev:create-roadmap` → `/dev:plan-phase` → `/dev:execute-phase`
 
 The codebase docs load automatically during planning. Claude knows your patterns, conventions, and where to put things.
 
@@ -320,31 +320,31 @@ You're never locked in. The system adapts.
 
 | Command | What it does |
 |---------|--------------|
-| `/conductor:new-project` | Extract your idea through questions, create PROJECT.md |
-| `/conductor:create-roadmap` | Create roadmap and state tracking |
-| `/conductor:map-codebase` | Map existing codebase for brownfield projects |
-| `/conductor:plan-phase [N]` | Generate task plans for phase |
-| `/conductor:execute-plan` | Run single plan via subagent |
-| `/conductor:execute-phase <N>` | Execute all plans in phase N with parallel agents |
-| `/conductor:status [--wait]` | Check background agent status from parallel execution |
-| `/conductor:progress` | Where am I? What's next? |
-| `/conductor:verify-work [N]` | User acceptance test of phase or plan ¹ |
-| `/conductor:plan-fix [plan]` | Plan fixes for UAT issues from verify-work |
-| `/conductor:complete-milestone` | Ship it, prep next version |
-| `/conductor:discuss-milestone` | Gather context for next milestone |
-| `/conductor:new-milestone [name]` | Create new milestone with phases |
-| `/conductor:add-phase` | Append phase to roadmap |
-| `/conductor:insert-phase [N]` | Insert urgent work |
-| `/conductor:remove-phase [N]` | Remove future phase, renumber subsequent |
-| `/conductor:discuss-phase [N]` | Gather context before planning |
-| `/conductor:research-phase [N]` | Deep ecosystem research for niche domains |
-| `/conductor:list-phase-assumptions [N]` | See what Claude thinks before you correct it |
-| `/conductor:pause-work` | Create handoff file when stopping mid-phase |
-| `/conductor:resume-work` | Restore from last session |
-| `/conductor:add-todo [desc]` | Capture idea or task from conversation for later |
-| `/conductor:check-todos [area]` | List pending todos, select one to work on |
-| `/conductor:debug [desc]` | Systematic debugging with persistent state across `/clear` |
-| `/conductor:help` | Show all commands and usage guide |
+| `/dev:new-project` | Extract your idea through questions, create PROJECT.md |
+| `/dev:create-roadmap` | Create roadmap and state tracking |
+| `/dev:map-codebase` | Map existing codebase for brownfield projects |
+| `/dev:plan-phase [N]` | Generate task plans for phase |
+| `/dev:execute-plan` | Run single plan via subagent |
+| `/dev:execute-phase <N>` | Execute all plans in phase N with parallel agents |
+| `/dev:status [--wait]` | Check background agent status from parallel execution |
+| `/dev:progress` | Where am I? What's next? |
+| `/dev:verify-work [N]` | User acceptance test of phase or plan ¹ |
+| `/dev:plan-fix [plan]` | Plan fixes for UAT issues from verify-work |
+| `/dev:complete-milestone` | Ship it, prep next version |
+| `/dev:discuss-milestone` | Gather context for next milestone |
+| `/dev:new-milestone [name]` | Create new milestone with phases |
+| `/dev:add-phase` | Append phase to roadmap |
+| `/dev:insert-phase [N]` | Insert urgent work |
+| `/dev:remove-phase [N]` | Remove future phase, renumber subsequent |
+| `/dev:discuss-phase [N]` | Gather context before planning |
+| `/dev:research-phase [N]` | Deep ecosystem research for niche domains |
+| `/dev:list-phase-assumptions [N]` | See what Claude thinks before you correct it |
+| `/dev:pause-work` | Create handoff file when stopping mid-phase |
+| `/dev:resume-work` | Restore from last session |
+| `/dev:add-todo [desc]` | Capture idea or task from conversation for later |
+| `/dev:check-todos [area]` | List pending todos, select one to work on |
+| `/dev:debug [desc]` | Systematic debugging with persistent state across `/clear` |
+| `/dev:help` | Show all commands and usage guide |
 
 <sup>¹ Contributed by reddit user OracleGreyBeard</sup>
 
@@ -357,7 +357,7 @@ You're never locked in. The system adapts.
 - Verify files exist in `~/.claude/commands/conductor/` (global) or `./.claude/commands/conductor/` (local)
 
 **Commands not working as expected?**
-- Run `/conductor:help` to verify installation
+- Run `/dev:help` to verify installation
 - Re-run `npx conductor-cc` to reinstall
 
 **Updating to the latest version?**

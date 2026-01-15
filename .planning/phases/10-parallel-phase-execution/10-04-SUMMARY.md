@@ -93,16 +93,16 @@ None
 All 4 plans executed:
 - 10-01: Renamed execute-phase → execute-plan workflow
 - 10-02: Created parallel execution workflow (execute-phase.md)
-- 10-03: Created /conductor:execute-phase command + parallelization config
+- 10-03: Created /dev:execute-phase command + parallelization config
 - 10-04: Extended agent-history schema to v1.2
 
-Parallel phase execution now available via `/conductor:execute-phase`.
+Parallel phase execution now available via `/dev:execute-phase`.
 
 ## Next Phase Readiness
 
 - Phase 10 complete
 - Milestone complete - all 10 phases finished
-- Ready for `/conductor:complete-milestone`
+- Ready for `/dev:complete-milestone`
 
 ---
 *Phase: 10-parallel-phase-execution*

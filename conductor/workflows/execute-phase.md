@@ -101,7 +101,7 @@ waves = {
 }
 ```
 
-**No dependency analysis needed.** Wave numbers are pre-computed during `/conductor:plan-phase`.
+**No dependency analysis needed.** Wave numbers are pre-computed during `/dev:plan-phase`.
 
 Report wave structure to user:
 ```
@@ -313,7 +313,7 @@ Present next steps based on milestone status:
 
 **Phase {X+1}: {Name}** — {Goal}
 
-`/conductor:plan-phase {X+1}`
+`/dev:plan-phase {X+1}`
 
 <sub>`/clear` first for fresh context</sub>
 ```
@@ -324,7 +324,7 @@ MILESTONE COMPLETE!
 
 All {N} phases executed.
 
-`/conductor:complete-milestone`
+`/dev:complete-milestone`
 ```
 </step>
 
@@ -379,7 +379,7 @@ Each subagent: Fresh 200k context
 
 If phase execution was interrupted (context limit, user exit, error):
 
-1. Run `/conductor:execute-phase {phase}` again
+1. Run `/dev:execute-phase {phase}` again
 2. discover_plans finds completed SUMMARYs
 3. Skips completed plans
 4. Resumes from first incomplete plan

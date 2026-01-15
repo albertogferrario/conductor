@@ -1,5 +1,5 @@
 ---
-name: conductor:create-roadmap
+name: dev:create-roadmap
 description: Create roadmap with phases for the project
 allowed-tools:
   - Read
@@ -12,7 +12,7 @@ allowed-tools:
 <objective>
 Create project roadmap with phase breakdown.
 
-Roadmaps define what work happens in what order. Run after /conductor:new-project.
+Roadmaps define what work happens in what order. Run after /dev:new-project.
 </objective>
 
 <execution_context>
@@ -31,7 +31,7 @@ Roadmaps define what work happens in what order. Run after /conductor:new-projec
 <step name="validate">
 ```bash
 # Verify project exists
-[ -f .planning/PROJECT.md ] || { echo "ERROR: No PROJECT.md found. Run /conductor:new-project first."; exit 1; }
+[ -f .planning/PROJECT.md ] || { echo "ERROR: No PROJECT.md found. Run /dev:new-project first."; exit 1; }
 ```
 </step>
 
@@ -83,15 +83,15 @@ Roadmap created:
 
 **Phase 1: [Name]** — [Goal from ROADMAP.md]
 
-`/conductor:plan-phase 1`
+`/dev:plan-phase 1`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:discuss-phase 1` — gather context first
-- `/conductor:research-phase 1` — investigate unknowns
+- `/dev:discuss-phase 1` — gather context first
+- `/dev:research-phase 1` — investigate unknowns
 - Review roadmap
 
 ---

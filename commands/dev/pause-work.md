@@ -1,5 +1,5 @@
 ---
-name: conductor:pause-work
+name: dev:pause-work
 description: Create context handoff when pausing work mid-phase
 allowed-tools:
   - Read
@@ -107,7 +107,7 @@ Current state:
 - Status: [in_progress/blocked]
 - Committed as WIP
 
-To resume: /conductor:resume-work
+To resume: /dev:resume-work
 
 ```
 </step>

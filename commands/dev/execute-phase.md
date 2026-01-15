@@ -1,5 +1,5 @@
 ---
-name: conductor:execute-phase
+name: dev:execute-phase
 description: Execute all plans in a phase with wave-based parallelization
 argument-hint: "<phase-number>"
 allowed-tools:
@@ -96,16 +96,16 @@ All {Y} plans finished.
 
 **Phase {Z+1}: {Name}** — {Goal from ROADMAP.md}
 
-`/conductor:plan-phase {Z+1}`
+`/dev:plan-phase {Z+1}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work {Z}` — manual acceptance testing before continuing
-- `/conductor:discuss-phase {Z+1}` — gather context first
-- `/conductor:research-phase {Z+1}` — investigate unknowns
+- `/dev:verify-work {Z}` — manual acceptance testing before continuing
+- `/dev:discuss-phase {Z+1}` — gather context first
+- `/dev:research-phase {Z+1}` — investigate unknowns
 
 ---
 ```
@@ -127,15 +127,15 @@ All {N} phases finished.
 
 **Complete Milestone** — archive and prepare for next
 
-`/conductor:complete-milestone`
+`/dev:complete-milestone`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:verify-work` — manual acceptance testing before completing milestone
-- `/conductor:add-phase <description>` — add another phase before completing
+- `/dev:verify-work` — manual acceptance testing before completing milestone
+- `/dev:add-phase <description>` — add another phase before completing
 
 ---
 ```

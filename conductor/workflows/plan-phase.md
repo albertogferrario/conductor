@@ -136,7 +136,7 @@ Read any existing PLAN.md or DISCOVERY.md in the phase directory.
 
 If roadmap flagged `Research: Likely`, Level 0 (skip) is not available.
 
-For niche domains (3D, games, audio, shaders, ML), suggest `/conductor:research-phase` before plan-phase.
+For niche domains (3D, games, audio, shaders, ML), suggest `/dev:research-phase` before plan-phase.
 </step>
 
 <step name="read_project_history">
@@ -217,19 +217,19 @@ Understand:
 - Phase goal (from roadmap)
 - What exists already (scan codebase if mid-project)
 - Dependencies met (previous phases complete?)
-- Any {phase}-RESEARCH.md (from /conductor:research-phase)
+- Any {phase}-RESEARCH.md (from /dev:research-phase)
 - Any DISCOVERY.md (from mandatory discovery)
-- Any {phase}-CONTEXT.md (from /conductor:discuss-phase)
+- Any {phase}-CONTEXT.md (from /dev:discuss-phase)
 
 ```bash
 # If mid-project, understand current state
 ls -la src/ 2>/dev/null
 cat package.json 2>/dev/null | head -20
 
-# Check for ecosystem research (from /conductor:research-phase)
+# Check for ecosystem research (from /dev:research-phase)
 cat .planning/phases/XX-name/${PHASE}-RESEARCH.md 2>/dev/null
 
-# Check for phase context (from /conductor:discuss-phase)
+# Check for phase context (from /dev:discuss-phase)
 cat .planning/phases/XX-name/${PHASE}-CONTEXT.md 2>/dev/null
 ```
 
@@ -237,7 +237,7 @@ cat .planning/phases/XX-name/${PHASE}-CONTEXT.md 2>/dev/null
 
 **If CONTEXT.md exists:** Honor vision, prioritize essential, respect boundaries, incorporate specifics.
 
-**If neither exist:** Suggest /conductor:research-phase for niche domains, /conductor:discuss-phase for simpler domains, or proceed with roadmap only.
+**If neither exist:** Suggest /dev:research-phase for niche domains, /dev:discuss-phase for simpler domains, or proceed with roadmap only.
 </step>
 
 <step name="break_into_tasks">
@@ -606,7 +606,7 @@ user_setup:
 
 Do NOT include: npm install, code changes, file creation, CLI commands Claude can run.
 
-**Wave is pre-computed:** Wave numbers are assigned during planning (see `assign_waves` step). `/conductor:execute-phase` reads `wave` directly from frontmatter and groups plans by wave number. No runtime dependency analysis needed.
+**Wave is pre-computed:** Wave numbers are assigned during planning (see `assign_waves` step). `/dev:execute-phase` reads `wave` directly from frontmatter and groups plans by wave number. No runtime dependency analysis needed.
 
 **Context section - parallel-aware:**
 
@@ -684,12 +684,12 @@ Wave 2: {plan-03}
 [If 1 plan created:]
 **{phase}-01: [Plan Name]** - [objective summary]
 
-`/conductor:execute-plan .planning/phases/XX-name/{phase}-01-PLAN.md`
+`/dev:execute-plan .planning/phases/XX-name/{phase}-01-PLAN.md`
 
 [If 2+ plans created:]
 **Phase {X}: [Phase Name]** - {N} plans in {M} waves
 
-`/conductor:execute-phase {X}`
+`/dev:execute-phase {X}`
 
 <sub>`/clear` first - fresh context window</sub>
 
@@ -697,7 +697,7 @@ Wave 2: {plan-03}
 
 **Also available:**
 - Review/adjust plans before executing
-[If 2+ plans: - `/conductor:execute-plan {phase}-01-PLAN.md` - run plans one at a time]
+[If 2+ plans: - `/dev:execute-plan {phase}-01-PLAN.md` - run plans one at a time]
 [If 2+ plans: - View all plans: `ls .planning/phases/XX-name/*-PLAN.md`]
 
 ---

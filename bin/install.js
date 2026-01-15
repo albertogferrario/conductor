@@ -151,11 +151,11 @@ function install(isGlobal) {
   const commandsDir = path.join(claudeDir, 'commands');
   fs.mkdirSync(commandsDir, { recursive: true });
 
-  // Copy commands/conductor with path replacement
+  // Copy commands/dev with path replacement
   const conductorCmdSrc = path.join(src, 'commands', 'conductor');
   const conductorCmdDest = path.join(commandsDir, 'conductor');
   copyWithPathReplacement(conductorCmdSrc, conductorCmdDest, pathPrefix);
-  console.log(`  ${green}✓${reset} Installed commands/conductor`);
+  console.log(`  ${green}✓${reset} Installed commands/dev`);
 
   // Copy conductor skill with path replacement
   const skillSrc = path.join(src, 'conductor');
@@ -177,7 +177,7 @@ function install(isGlobal) {
   console.log(`  ${green}✓${reset} Wrote VERSION (${pkg.version})`);
 
   console.log(`
-  ${green}Done!${reset} Launch Claude Code and run ${cyan}/conductor:help${reset}.
+  ${green}Done!${reset} Launch Claude Code and run ${cyan}/dev:help${reset}.
 `);
 }
 

@@ -42,7 +42,7 @@ fi
 ```
 Error: Phase ${PHASE} not found in roadmap.
 
-Use /conductor:progress to see available phases.
+Use /dev:progress to see available phases.
 ```
 
 Exit workflow.
@@ -190,14 +190,14 @@ Created: .planning/phases/${PHASE}-${SLUG}/${PHASE}-CONTEXT.md
 
 **Phase ${PHASE}: [Name]** — [Goal from ROADMAP.md]
 
-`/conductor:plan-phase ${PHASE}`
+`/dev:plan-phase ${PHASE}`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:research-phase ${PHASE}` — investigate unknowns
+- `/dev:research-phase ${PHASE}` — investigate unknowns
 - Review/edit CONTEXT.md before continuing
 
 ---

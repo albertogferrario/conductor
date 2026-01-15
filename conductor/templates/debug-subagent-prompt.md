@@ -1,7 +1,7 @@
 # Debug Subagent Prompt Template
 
 Template for spawning debug investigation agents. Used by:
-- `/conductor:debug` — Interactive debugging (find and offer to fix)
+- `/dev:debug` — Interactive debugging (find and offer to fix)
 - `diagnose-issues` — UAT parallel diagnosis (find root cause only)
 
 The `goal` flag determines behavior after root cause is found.
@@ -47,7 +47,7 @@ Start directly at investigation_loop.
 **goal: {goal}**
 
 - `find_root_cause_only` — Diagnose but do NOT fix. Return root cause to orchestrator. Used by UAT diagnosis flow where plan-fix handles the fix.
-- `find_and_fix` — Find root cause, then fix and verify. Used by interactive /conductor:debug where user wants immediate resolution.
+- `find_and_fix` — Find root cause, then fix and verify. Used by interactive /dev:debug where user wants immediate resolution.
 </mode>
 
 <debug_file>
@@ -289,7 +289,7 @@ If ELIMINATED:
 
 ## Usage by Orchestrator
 
-**From /conductor:debug (interactive):**
+**From /dev:debug (interactive):**
 
 ```python
 Task(

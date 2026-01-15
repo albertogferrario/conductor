@@ -1,17 +1,17 @@
 ---
 paths:
-  - "commands/conductor/**/*.md"
+  - "commands/dev/**/*.md"
 ---
 
 # Slash Command Rules
 
-Rules for editing files in `commands/conductor/`.
+Rules for editing files in `commands/dev/`.
 
 ## File Structure
 
 ```yaml
 ---
-name: conductor:command-name
+name: dev:command-name
 description: One-line description
 argument-hint: "<required>" or "[optional]"
 allowed-tools: [Read, Write, Bash, Glob, Grep, AskUserQuestion]

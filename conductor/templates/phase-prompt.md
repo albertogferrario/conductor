@@ -134,7 +134,7 @@ After completion, create `.planning/phases/XX-name/{phase}-{plan}-SUMMARY.md`
 | `domain` | No | Domain skill if loaded (e.g., `next-js`) |
 | `user_setup` | No | Array of human-required setup items (external services) |
 
-**Wave is pre-computed:** Wave numbers are assigned during `/conductor:plan-phase`. Execute-phase reads `wave` directly from frontmatter and groups plans by wave number. No runtime dependency analysis needed.
+**Wave is pre-computed:** Wave numbers are assigned during `/dev:plan-phase`. Execute-phase reads `wave` directly from frontmatter and groups plans by wave number. No runtime dependency analysis needed.
 
 ---
 

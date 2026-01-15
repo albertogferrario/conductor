@@ -1,5 +1,5 @@
 ---
-name: conductor:execute-plan
+name: dev:execute-plan
 description: Execute a PLAN.md file
 argument-hint: "[path-to-PLAN.md]"
 allowed-tools:
@@ -127,7 +127,7 @@ Summary: .planning/phases/{phase-dir}/{phase}-{plan}-SUMMARY.md
 
 **{phase}-{next-plan}: [Plan Name]** — [objective from PLAN.md]
 
-`/conductor:execute-plan .planning/phases/{phase-dir}/{phase}-{next-plan}-PLAN.md`
+`/dev:execute-plan .planning/phases/{phase-dir}/{phase}-{next-plan}-PLAN.md`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -160,7 +160,7 @@ All {Y} plans finished.
 
 **Phase {Z+1}: {Name}** — {Goal from ROADMAP.md}
 
-`/conductor:plan-phase {Z+1}`
+`/dev:plan-phase {Z+1}`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -182,7 +182,7 @@ All {N} phases finished.
 
 ## ▶ Next Up
 
-`/conductor:complete-milestone`
+`/dev:complete-milestone`
 
 <sub>`/clear` first → fresh context window</sub>
 

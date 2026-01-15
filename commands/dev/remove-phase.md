@@ -1,5 +1,5 @@
 ---
-name: conductor:remove-phase
+name: dev:remove-phase
 description: Remove a future phase from roadmap and renumber subsequent phases
 argument-hint: <phase-number>
 allowed-tools:
@@ -26,15 +26,15 @@ Output: Phase deleted, all subsequent phases renumbered, git commit as historica
 <step name="parse_arguments">
 Parse the command arguments:
 - Argument is the phase number to remove (integer or decimal)
-- Example: `/conductor:remove-phase 17` → phase = 17
-- Example: `/conductor:remove-phase 16.1` → phase = 16.1
+- Example: `/dev:remove-phase 17` → phase = 17
+- Example: `/dev:remove-phase 16.1` → phase = 16.1
 
 If no argument provided:
 
 ```
 ERROR: Phase number required
-Usage: /conductor:remove-phase <phase-number>
-Example: /conductor:remove-phase 17
+Usage: /dev:remove-phase <phase-number>
+Example: /dev:remove-phase 17
 ```
 
 Exit.
@@ -80,7 +80,7 @@ Only future phases can be removed:
 - Current phase: {current}
 - Phase {target} is current or completed
 
-To abandon current work, use /conductor:pause-work instead.
+To abandon current work, use /dev:pause-work instead.
 ```
 
 Exit.
@@ -280,7 +280,7 @@ Current position: Phase {current} of {new-total}
 ## What's Next
 
 Would you like to:
-- `/conductor:progress` — see updated roadmap status
+- `/dev:progress` — see updated roadmap status
 - Continue with current phase
 - Review roadmap
 

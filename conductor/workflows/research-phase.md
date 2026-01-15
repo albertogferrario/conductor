@@ -1,7 +1,7 @@
 <purpose>
 Comprehensive research on HOW to implement a phase before planning.
 
-Triggered by /conductor:research-phase command when the domain is niche, complex, or Claude's training is likely stale.
+Triggered by /dev:research-phase command when the domain is niche, complex, or Claude's training is likely stale.
 
 Produces RESEARCH.md with ecosystem knowledge that informs quality planning - not just "which library" but "how do experts build this."
 </purpose>
@@ -53,7 +53,7 @@ fi
 ```
 Error: Phase ${PHASE} not found in roadmap.
 
-Use /conductor:progress to see available phases.
+Use /dev:progress to see available phases.
 ```
 Exit workflow.
 
@@ -103,7 +103,7 @@ Load available context to inform research direction:
 cat .planning/PROJECT.md 2>/dev/null | head -50
 ```
 
-**2. Phase context (if exists from /conductor:discuss-phase):**
+**2. Phase context (if exists from /dev:discuss-phase):**
 ```bash
 cat .planning/phases/${PHASE}-*/${PHASE}-CONTEXT.md 2>/dev/null
 ```
@@ -371,7 +371,7 @@ Created: .planning/phases/${PHASE}-${SLUG}/${PHASE}-RESEARCH.md
 **Confidence:** [HIGH/MEDIUM/LOW] - [brief reason]
 
 What's next?
-1. Plan this phase (/conductor:plan-phase ${PHASE}) - RESEARCH.md will be loaded automatically
+1. Plan this phase (/dev:plan-phase ${PHASE}) - RESEARCH.md will be loaded automatically
 2. Dig deeper - Research specific areas more thoroughly
 3. Review full RESEARCH.md
 4. Done for now
@@ -418,7 +418,7 @@ Confirm: "Committed: docs(${PHASE}): complete phase research"
 </success_criteria>
 
 <integration_with_planning>
-When /conductor:plan-phase runs after research:
+When /dev:plan-phase runs after research:
 
 1. plan-phase detects RESEARCH.md exists in phase directory
 2. RESEARCH.md loaded as @context reference

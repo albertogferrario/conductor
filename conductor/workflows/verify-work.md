@@ -1,5 +1,5 @@
 <purpose>
-Validate built features through conversational testing with persistent state. Creates UAT.md that tracks test progress, survives /clear, and feeds into /conductor:plan-fix.
+Validate built features through conversational testing with persistent state. Creates UAT.md that tracks test progress, survives /clear, and feeds into /dev:plan-fix.
 
 User tests, Claude records. One test at a time. Plain text responses.
 </purpose>
@@ -59,7 +59,7 @@ If no, continue to `create_uat_file`.
 ```
 No active UAT sessions.
 
-Provide a phase number to start testing (e.g., /conductor:verify-work 4)
+Provide a phase number to start testing (e.g., /dev:verify-work 4)
 ```
 
 **If no active sessions AND $ARGUMENTS provided:**
@@ -153,7 +153,7 @@ issues: 0
 pending: [N]
 skipped: 0
 
-## Issues for /conductor:plan-fix
+## Issues for /dev:plan-fix
 
 [none yet]
 ```
@@ -300,8 +300,8 @@ Present summary:
 ```
 All tests passed. Ready to continue.
 
-- `/conductor:plan-phase {next}` — Plan next phase
-- `/conductor:execute-phase {next}` — Execute next phase
+- `/dev:plan-phase {next}` — Plan next phase
+- `/dev:execute-phase {next}` — Execute next phase
 ```
 </step>
 
@@ -341,8 +341,8 @@ Diagnosis runs automatically - no user prompt. Parallel agents investigate simul
 ...
 
 Next steps:
-- `/conductor:plan-fix {phase}` — Create fix plan with root causes
-- `/conductor:verify-work {phase}` — Re-test after fixes
+- `/dev:plan-fix {phase}` — Create fix plan with root causes
+- `/dev:verify-work {phase}` — Re-test after fixes
 ```
 </step>
 

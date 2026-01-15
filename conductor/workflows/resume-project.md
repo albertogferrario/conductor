@@ -26,7 +26,7 @@ ls .planning/PROJECT.md 2>/dev/null && echo "Project file exists"
 
 **If STATE.md exists:** Proceed to load_state
 **If only ROADMAP.md/PROJECT.md exist:** Offer to reconstruct STATE.md
-**If .planning/ doesn't exist:** This is a new project - route to /conductor:new-project
+**If .planning/ doesn't exist:** This is a new project - route to /dev:new-project
 </step>
 
 <step name="load_state">
@@ -121,10 +121,10 @@ Present complete project status to user:
     Task: [task description from agent-history.json]
     Interrupted: [timestamp]
 
-    Resume with: /conductor:resume-task
+    Resume with: /dev:resume-task
 
 [If pending todos exist:]
-📋 [N] pending todos — /conductor:check-todos to review
+📋 [N] pending todos — /dev:check-todos to review
 
 [If blockers exist:]
 ⚠️  Carried concerns:
@@ -141,7 +141,7 @@ Present complete project status to user:
 Based on project state, determine the most logical next action:
 
 **If interrupted agent exists:**
-→ Primary: Resume interrupted agent (/conductor:resume-task)
+→ Primary: Resume interrupted agent (/dev:resume-task)
 → Option: Start fresh (abandon agent work)
 
 **If .continue-here file exists:**
@@ -178,15 +178,15 @@ Present contextual options based on project state:
 What would you like to do?
 
 [Primary action based on state - e.g.:]
-1. Resume interrupted agent (/conductor:resume-task) [if interrupted agent found]
+1. Resume interrupted agent (/dev:resume-task) [if interrupted agent found]
    OR
-1. Resume from checkpoint (/conductor:execute-plan .planning/phases/XX-name/.continue-here-02-01.md)
+1. Resume from checkpoint (/dev:execute-plan .planning/phases/XX-name/.continue-here-02-01.md)
    OR
-1. Execute next plan (/conductor:execute-plan .planning/phases/XX-name/02-02-PLAN.md)
+1. Execute next plan (/dev:execute-plan .planning/phases/XX-name/02-02-PLAN.md)
    OR
-1. Discuss Phase 3 context (/conductor:discuss-phase 3) [if CONTEXT.md missing]
+1. Discuss Phase 3 context (/dev:discuss-phase 3) [if CONTEXT.md missing]
    OR
-1. Plan Phase 3 (/conductor:plan-phase 3) [if CONTEXT.md exists or discuss option declined]
+1. Plan Phase 3 (/dev:plan-phase 3) [if CONTEXT.md exists or discuss option declined]
 
 [Secondary options:]
 2. Review current phase status
@@ -217,7 +217,7 @@ Based on user selection, route to appropriate workflow:
 
   **{phase}-{plan}: [Plan Name]** — [objective from PLAN.md]
 
-  `/conductor:execute-plan [path]`
+  `/dev:execute-plan [path]`
 
   <sub>`/clear` first → fresh context window</sub>
 
@@ -231,15 +231,15 @@ Based on user selection, route to appropriate workflow:
 
   **Phase [N]: [Name]** — [Goal from ROADMAP.md]
 
-  `/conductor:plan-phase [phase-number]`
+  `/dev:plan-phase [phase-number]`
 
   <sub>`/clear` first → fresh context window</sub>
 
   ---
 
   **Also available:**
-  - `/conductor:discuss-phase [N]` — gather context first
-  - `/conductor:research-phase [N]` — investigate unknowns
+  - `/dev:discuss-phase [N]` — gather context first
+  - `/dev:research-phase [N]` — investigate unknowns
 
   ---
   ```

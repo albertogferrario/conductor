@@ -1,5 +1,5 @@
 ---
-name: conductor:help
+name: dev:help
 description: Show available Conductor commands and usage guide
 ---
 
@@ -21,10 +21,10 @@ Output ONLY the reference content below. Do NOT add:
 
 ## Quick Start
 
-1. `/conductor:new-project` - Initialize project with brief
-2. `/conductor:create-roadmap` - Create roadmap and phases
-3. `/conductor:plan-phase <number>` - Create detailed plan for first phase
-4. `/conductor:execute-plan <path>` - Execute the plan
+1. `/dev:new-project` - Initialize project with brief
+2. `/dev:create-roadmap` - Create roadmap and phases
+3. `/dev:plan-phase <number>` - Create detailed plan for first phase
+4. `/dev:execute-plan <path>` - Execute the plan
 
 ## Core Workflow
 
@@ -34,7 +34,7 @@ Initialization → Planning → Execution → Milestone Completion
 
 ### Project Initialization
 
-**`/conductor:new-project`**
+**`/dev:new-project`**
 Initialize new project with brief and configuration.
 
 - Creates `.planning/PROJECT.md` (vision and requirements)
@@ -42,39 +42,39 @@ Initialize new project with brief and configuration.
 - Asks for workflow mode (interactive/yolo) upfront
 - Commits initialization files to git
 
-Usage: `/conductor:new-project`
+Usage: `/dev:new-project`
 
-**`/conductor:create-roadmap`**
+**`/dev:create-roadmap`**
 Create roadmap and state tracking for initialized project.
 
 - Creates `.planning/ROADMAP.md` (phase breakdown)
 - Creates `.planning/STATE.md` (project memory)
 - Creates `.planning/phases/` directories
 
-Usage: `/conductor:create-roadmap`
+Usage: `/dev:create-roadmap`
 
-**`/conductor:map-codebase`**
+**`/dev:map-codebase`**
 Map an existing codebase for brownfield projects.
 
 - Analyzes codebase with parallel Explore agents
 - Creates `.planning/codebase/` with 7 focused documents
 - Covers stack, architecture, structure, conventions, testing, integrations, concerns
-- Use before `/conductor:new-project` on existing codebases
+- Use before `/dev:new-project` on existing codebases
 
-Usage: `/conductor:map-codebase`
+Usage: `/dev:map-codebase`
 
 ### Phase Planning
 
-**`/conductor:discuss-phase <number>`**
+**`/dev:discuss-phase <number>`**
 Help articulate your vision for a phase before planning.
 
 - Captures how you imagine this phase working
 - Creates CONTEXT.md with your vision, essentials, and boundaries
 - Use when you have ideas about how something should look/feel
 
-Usage: `/conductor:discuss-phase 2`
+Usage: `/dev:discuss-phase 2`
 
-**`/conductor:research-phase <number>`**
+**`/dev:research-phase <number>`**
 Comprehensive ecosystem research for niche/complex domains.
 
 - Discovers standard stack, architecture patterns, pitfalls
@@ -82,18 +82,18 @@ Comprehensive ecosystem research for niche/complex domains.
 - Use for 3D, games, audio, shaders, ML, and other specialized domains
 - Goes beyond "which library" to ecosystem knowledge
 
-Usage: `/conductor:research-phase 3`
+Usage: `/dev:research-phase 3`
 
-**`/conductor:list-phase-assumptions <number>`**
+**`/dev:list-phase-assumptions <number>`**
 See what Claude is planning to do before it starts.
 
 - Shows Claude's intended approach for a phase
 - Lets you course-correct if Claude misunderstood your vision
 - No files created - conversational output only
 
-Usage: `/conductor:list-phase-assumptions 3`
+Usage: `/dev:list-phase-assumptions 3`
 
-**`/conductor:plan-phase <number>`**
+**`/dev:plan-phase <number>`**
 Create detailed execution plan for a specific phase.
 
 - Generates `.planning/phases/XX-phase-name/XX-YY-PLAN.md`
@@ -101,12 +101,12 @@ Create detailed execution plan for a specific phase.
 - Includes verification criteria and success measures
 - Multiple plans per phase supported (XX-01, XX-02, etc.)
 
-Usage: `/conductor:plan-phase 1`
+Usage: `/dev:plan-phase 1`
 Result: Creates `.planning/phases/01-foundation/01-01-PLAN.md`
 
 ### Execution
 
-**`/conductor:execute-plan <path>`**
+**`/dev:execute-plan <path>`**
 Execute a single PLAN.md file.
 
 - Runs plan tasks sequentially
@@ -114,53 +114,53 @@ Execute a single PLAN.md file.
 - Updates STATE.md with accumulated context
 - Use for interactive execution with checkpoints
 
-Usage: `/conductor:execute-plan .planning/phases/01-foundation/01-01-PLAN.md`
+Usage: `/dev:execute-plan .planning/phases/01-foundation/01-01-PLAN.md`
 
-**`/conductor:execute-phase <phase-number>`**
+**`/dev:execute-phase <phase-number>`**
 Execute all unexecuted plans in a phase with parallel background agents.
 
 - Analyzes plan dependencies and spawns independent plans concurrently
 - Use when phase has 2+ plans and you want "walk away" execution
 - Respects max_concurrent_agents from config.json
 
-Usage: `/conductor:execute-phase 5`
+Usage: `/dev:execute-phase 5`
 
 Options (via `.planning/config.json` parallelization section):
 - `max_concurrent_agents`: Limit parallel agents (default: 3)
 - `skip_checkpoints`: Skip human checkpoints in background (default: true)
 - `min_plans_for_parallel`: Minimum plans to trigger parallelization (default: 2)
 
-**`/conductor:status [--wait]`**
+**`/dev:status [--wait]`**
 Check status of background agents from parallel execution.
 
 - Shows running/completed agents from agent-history.json
 - Uses TaskOutput to poll agent status
 - With `--wait`: blocks until all agents complete
 
-Usage: `/conductor:status` or `/conductor:status --wait`
+Usage: `/dev:status` or `/dev:status --wait`
 
 ### Roadmap Management
 
-**`/conductor:add-phase <description>`**
+**`/dev:add-phase <description>`**
 Add new phase to end of current milestone.
 
 - Appends to ROADMAP.md
 - Uses next sequential number
 - Updates phase directory structure
 
-Usage: `/conductor:add-phase "Add admin dashboard"`
+Usage: `/dev:add-phase "Add admin dashboard"`
 
-**`/conductor:insert-phase <after> <description>`**
+**`/dev:insert-phase <after> <description>`**
 Insert urgent work as decimal phase between existing phases.
 
 - Creates intermediate phase (e.g., 7.1 between 7 and 8)
 - Useful for discovered work that must happen mid-milestone
 - Maintains phase ordering
 
-Usage: `/conductor:insert-phase 7 "Fix critical auth bug"`
+Usage: `/dev:insert-phase 7 "Fix critical auth bug"`
 Result: Creates Phase 7.1
 
-**`/conductor:remove-phase <number>`**
+**`/dev:remove-phase <number>`**
 Remove a future phase and renumber subsequent phases.
 
 - Deletes phase directory and all references
@@ -168,30 +168,30 @@ Remove a future phase and renumber subsequent phases.
 - Only works on future (unstarted) phases
 - Git commit preserves historical record
 
-Usage: `/conductor:remove-phase 17`
+Usage: `/dev:remove-phase 17`
 Result: Phase 17 deleted, phases 18-20 become 17-19
 
 ### Milestone Management
 
-**`/conductor:discuss-milestone`**
+**`/dev:discuss-milestone`**
 Figure out what you want to build in the next milestone.
 
 - Reviews what shipped in previous milestone
 - Helps you identify features to add, improve, or fix
-- Routes to /conductor:new-milestone when ready
+- Routes to /dev:new-milestone when ready
 
-Usage: `/conductor:discuss-milestone`
+Usage: `/dev:discuss-milestone`
 
-**`/conductor:new-milestone <name>`**
+**`/dev:new-milestone <name>`**
 Create a new milestone with phases for an existing project.
 
 - Adds milestone section to ROADMAP.md
 - Creates phase directories
 - Updates STATE.md for new milestone
 
-Usage: `/conductor:new-milestone "v2.0 Features"`
+Usage: `/dev:new-milestone "v2.0 Features"`
 
-**`/conductor:complete-milestone <version>`**
+**`/dev:complete-milestone <version>`**
 Archive completed milestone and prepare for next version.
 
 - Creates MILESTONES.md entry with stats
@@ -199,11 +199,11 @@ Archive completed milestone and prepare for next version.
 - Creates git tag for the release
 - Prepares workspace for next version
 
-Usage: `/conductor:complete-milestone 1.0.0`
+Usage: `/dev:complete-milestone 1.0.0`
 
 ### Progress Tracking
 
-**`/conductor:progress`**
+**`/dev:progress`**
 Check project status and intelligently route to next action.
 
 - Shows visual progress bar and completion percentage
@@ -213,45 +213,45 @@ Check project status and intelligently route to next action.
 - Offers to execute next plan or create it if missing
 - Detects 100% milestone completion
 
-Usage: `/conductor:progress`
+Usage: `/dev:progress`
 
 ### Session Management
 
-**`/conductor:resume-work`**
+**`/dev:resume-work`**
 Resume work from previous session with full context restoration.
 
 - Reads STATE.md for project context
 - Shows current position and recent progress
 - Offers next actions based on project state
 
-Usage: `/conductor:resume-work`
+Usage: `/dev:resume-work`
 
-**`/conductor:pause-work`**
+**`/dev:pause-work`**
 Create context handoff when pausing work mid-phase.
 
 - Creates .continue-here file with current state
 - Updates STATE.md session continuity section
 - Captures in-progress work context
 
-Usage: `/conductor:pause-work`
+Usage: `/dev:pause-work`
 
 ### Debugging
 
-**`/conductor:debug [issue description]`**
+**`/dev:debug [issue description]`**
 Systematic debugging with persistent state across context resets.
 
 - Gathers symptoms through adaptive questioning
 - Creates `.planning/debug/[slug].md` to track investigation
 - Investigates using scientific method (evidence → hypothesis → test)
-- Survives `/clear` — run `/conductor:debug` with no args to resume
+- Survives `/clear` — run `/dev:debug` with no args to resume
 - Archives resolved issues to `.planning/debug/resolved/`
 
-Usage: `/conductor:debug "login button doesn't work"`
-Usage: `/conductor:debug` (resume active session)
+Usage: `/dev:debug "login button doesn't work"`
+Usage: `/dev:debug` (resume active session)
 
 ### Todo Management
 
-**`/conductor:add-todo [description]`**
+**`/dev:add-todo [description]`**
 Capture idea or task as todo from current conversation.
 
 - Extracts context from conversation (or uses provided description)
@@ -260,27 +260,27 @@ Capture idea or task as todo from current conversation.
 - Checks for duplicates before creating
 - Updates STATE.md todo count
 
-Usage: `/conductor:add-todo` (infers from conversation)
-Usage: `/conductor:add-todo Add auth token refresh`
+Usage: `/dev:add-todo` (infers from conversation)
+Usage: `/dev:add-todo Add auth token refresh`
 
-**`/conductor:check-todos [area]`**
+**`/dev:check-todos [area]`**
 List pending todos and select one to work on.
 
 - Lists all pending todos with title, area, age
-- Optional area filter (e.g., `/conductor:check-todos api`)
+- Optional area filter (e.g., `/dev:check-todos api`)
 - Loads full context for selected todo
 - Routes to appropriate action (work now, add to phase, brainstorm)
 - Moves todo to done/ when work begins
 
-Usage: `/conductor:check-todos`
-Usage: `/conductor:check-todos api`
+Usage: `/dev:check-todos`
+Usage: `/dev:check-todos api`
 
 ### Utility Commands
 
-**`/conductor:help`**
+**`/dev:help`**
 Show this command reference.
 
-**`/conductor:whats-new`**
+**`/dev:whats-new`**
 See what's changed since your installed version.
 
 - Shows installed vs latest version comparison
@@ -288,7 +288,7 @@ See what's changed since your installed version.
 - Highlights breaking changes
 - Provides update instructions when behind
 
-Usage: `/conductor:whats-new`
+Usage: `/dev:whats-new`
 
 ## Files & Structure
 
@@ -322,7 +322,7 @@ Usage: `/conductor:whats-new`
 
 ## Workflow Modes
 
-Set during `/conductor:new-project`:
+Set during `/dev:new-project`:
 
 **Interactive Mode**
 
@@ -343,49 +343,49 @@ Change anytime by editing `.planning/config.json`
 **Starting a new project:**
 
 ```
-/conductor:new-project
-/conductor:create-roadmap
-/conductor:plan-phase 1
-/conductor:execute-plan .planning/phases/01-foundation/01-01-PLAN.md
+/dev:new-project
+/dev:create-roadmap
+/dev:plan-phase 1
+/dev:execute-plan .planning/phases/01-foundation/01-01-PLAN.md
 ```
 
 **Resuming work after a break:**
 
 ```
-/conductor:progress  # See where you left off and continue
+/dev:progress  # See where you left off and continue
 ```
 
 **Adding urgent mid-milestone work:**
 
 ```
-/conductor:insert-phase 5 "Critical security fix"
-/conductor:plan-phase 5.1
-/conductor:execute-plan .planning/phases/05.1-critical-security-fix/05.1-01-PLAN.md
+/dev:insert-phase 5 "Critical security fix"
+/dev:plan-phase 5.1
+/dev:execute-plan .planning/phases/05.1-critical-security-fix/05.1-01-PLAN.md
 ```
 
 **Completing a milestone:**
 
 ```
-/conductor:complete-milestone 1.0.0
-/conductor:new-project  # Start next milestone
+/dev:complete-milestone 1.0.0
+/dev:new-project  # Start next milestone
 ```
 
 **Capturing ideas during work:**
 
 ```
-/conductor:add-todo                    # Capture from conversation context
-/conductor:add-todo Fix modal z-index  # Capture with explicit description
-/conductor:check-todos                 # Review and work on todos
-/conductor:check-todos api             # Filter by area
+/dev:add-todo                    # Capture from conversation context
+/dev:add-todo Fix modal z-index  # Capture with explicit description
+/dev:check-todos                 # Review and work on todos
+/dev:check-todos api             # Filter by area
 ```
 
 **Debugging an issue:**
 
 ```
-/conductor:debug "form submission fails silently"  # Start debug session
+/dev:debug "form submission fails silently"  # Start debug session
 # ... investigation happens, context fills up ...
 /clear
-/conductor:debug                                    # Resume from where you left off
+/dev:debug                                    # Resume from where you left off
 ```
 
 ## Getting Help
@@ -393,5 +393,5 @@ Change anytime by editing `.planning/config.json`
 - Read `.planning/PROJECT.md` for project vision
 - Read `.planning/STATE.md` for current context
 - Check `.planning/ROADMAP.md` for phase status
-- Run `/conductor:progress` to check where you're up to
+- Run `/dev:progress` to check where you're up to
   </reference>

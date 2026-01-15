@@ -475,7 +475,7 @@ If ELIMINATED:
 
 After significant investigation (5+ evidence entries), check if context is heavy.
 If so, ensure Current Focus is fully updated and suggest:
-"Context filling up. Safe to /clear - run /conductor:debug to resume."
+"Context filling up. Safe to /clear - run /dev:debug to resume."
 </step>
 
 <step name="resume_from_file">
@@ -544,7 +544,7 @@ If unable to determine root cause after thorough investigation:
 **Debug Session:** {path to debug file}
 ```
 
-**Do NOT proceed to fix_and_verify.** The fix will be planned by /conductor:plan-fix using this diagnosis.
+**Do NOT proceed to fix_and_verify.** The fix will be planned by /dev:plan-fix using this diagnosis.
 </step>
 
 <step name="fix_and_verify">
@@ -629,7 +629,7 @@ Use AskUserQuestion:
 - header: "Next"
 - question: "What now?"
 - options:
-  - "Continue working" - Back to /conductor:progress
+  - "Continue working" - Back to /dev:progress
   - "Test more" - Verify related functionality
   - "Done" - End session
 </step>

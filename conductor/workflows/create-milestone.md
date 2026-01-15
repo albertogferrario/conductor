@@ -35,7 +35,7 @@ Extract:
 **Check for milestone context from discuss-milestone:**
 
 If `.planning/MILESTONE-CONTEXT.md` exists:
-- This contains context from `/conductor:discuss-milestone`
+- This contains context from `/dev:discuss-milestone`
 - Extract: features, suggested name, phase mapping, constraints
 - Use this to pre-populate milestone details (skip prompting for info already gathered)
 
@@ -47,7 +47,7 @@ If `.planning/MILESTONE-CONTEXT.md` exists:
   </step>
 
 <step name="get_milestone_info">
-**If MILESTONE-CONTEXT.md exists (from /conductor:discuss-milestone):**
+**If MILESTONE-CONTEXT.md exists (from /dev:discuss-milestone):**
 Use the features, scope, and constraints from the context file.
 Use the suggested milestone name from `<scope>` section.
 Use the phase mapping from `<phase_mapping>` section.
@@ -208,7 +208,7 @@ Write new milestone details to `.planning/ROADMAP.md`.
 
 **File to update:** `.planning/ROADMAP.md`
 
-The main ROADMAP.md file holds full phase details for the active milestone. Archive files in `milestones/` are created only when a milestone ships (via `/conductor:complete-milestone`).
+The main ROADMAP.md file holds full phase details for the active milestone. Archive files in `milestones/` are created only when a milestone ships (via `/dev:complete-milestone`).
 
 **Process:**
 
@@ -241,7 +241,7 @@ Write complete phase sections for all phases in this milestone. Each phase gets 
 **Plans**: TBD
 
 Plans:
-- [ ] [N]-01: TBD (run /conductor:plan-phase [N] to break down)
+- [ ] [N]-01: TBD (run /dev:plan-phase [N] to break down)
 
 #### Phase [N+1]: [Name]
 
@@ -349,7 +349,7 @@ Delete the temporary milestone context file if it exists:
 rm -f .planning/MILESTONE-CONTEXT.md
 ```
 
-This file was a handoff artifact from `/conductor:discuss-milestone`. Now that the milestone is created, the context is persisted in ROADMAP.md and the temporary file is no longer needed.
+This file was a handoff artifact from `/dev:discuss-milestone`. Now that the milestone is created, the context is persisted in ROADMAP.md and the temporary file is no longer needed.
 </step>
 
 <step name="offer_next">
@@ -366,15 +366,15 @@ Milestone v[X.Y] [Name] created:
 
 **Phase [N]: [Name]** — [Goal from ROADMAP.md]
 
-`/conductor:plan-phase [N]`
+`/dev:plan-phase [N]`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:discuss-phase [N]` — gather context first
-- `/conductor:research-phase [N]` — investigate unknowns
+- `/dev:discuss-phase [N]` — gather context first
+- `/dev:research-phase [N]` — investigate unknowns
 - Review roadmap
 
 ---

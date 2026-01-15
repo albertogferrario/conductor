@@ -130,7 +130,7 @@ Use decimal phases (2.1, 2.2) for urgent insertions:
 - Urgent work that can't wait for next milestone
 - Critical bugs blocking progress
 - Security patches needing immediate attention
-- NOT for scope creep or "nice to haves" (capture with /conductor:add-todo instead)
+- NOT for scope creep or "nice to haves" (capture with /dev:add-todo instead)
 
 **Phase execution order:**
 Numeric sort: 1 → 1.1 → 1.2 → 2 → 2.1 → 3
@@ -293,7 +293,7 @@ mkdir -p .planning/phases
 Use template from `~/.claude/conductor/templates/roadmap.md`.
 
 Initial roadmaps use integer phases (1, 2, 3...).
-Decimal phases added later via /conductor:insert-phase command (if it exists).
+Decimal phases added later via /dev:insert-phase command (if it exists).
 
 Write to `.planning/ROADMAP.md` with:
 
@@ -430,15 +430,15 @@ Project initialized:
 
 **Phase 1: [Name]** — [Goal from ROADMAP.md]
 
-`/conductor:plan-phase 1`
+`/dev:plan-phase 1`
 
 <sub>`/clear` first → fresh context window</sub>
 
 ---
 
 **Also available:**
-- `/conductor:discuss-phase 1` — gather context first
-- `/conductor:research-phase 1` — investigate unknowns
+- `/dev:discuss-phase 1` — gather context first
+- `/dev:research-phase 1` — investigate unknowns
 - Review roadmap
 
 ---

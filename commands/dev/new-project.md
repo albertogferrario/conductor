@@ -1,5 +1,5 @@
 ---
-name: conductor:new-project
+name: dev:new-project
 description: Initialize a new project with deep context gathering and PROJECT.md
 allowed-tools:
   - Read
@@ -35,7 +35,7 @@ Creates `.planning/` with PROJECT.md and config.json.
 
 1. **Abort if project exists:**
    ```bash
-   [ -f .planning/PROJECT.md ] && echo "ERROR: Project already initialized. Use /conductor:progress" && exit 1
+   [ -f .planning/PROJECT.md ] && echo "ERROR: Project already initialized. Use /dev:progress" && exit 1
    ```
 
 2. **Initialize git repo in THIS directory** (required even if inside a parent repo):
@@ -73,12 +73,12 @@ Use AskUserQuestion:
 - header: "Existing Code"
 - question: "I detected existing code in this directory. Would you like to map the codebase first?"
 - options:
-  - "Map codebase first" — Run /conductor:map-codebase to understand existing architecture (Recommended)
+  - "Map codebase first" — Run /dev:map-codebase to understand existing architecture (Recommended)
   - "Skip mapping" — Proceed with project initialization
 
 **If "Map codebase first":**
 ```
-Run `/conductor:map-codebase` first, then return to `/conductor:new-project`
+Run `/dev:map-codebase` first, then return to `/dev:new-project`
 ```
 Exit command.
 
@@ -305,7 +305,7 @@ Project initialized:
 
 **[Project Name]** — create roadmap
 
-`/conductor:create-roadmap`
+`/dev:create-roadmap`
 
 <sub>`/clear` first → fresh context window</sub>
 

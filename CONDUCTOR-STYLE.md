@@ -20,7 +20,7 @@ Conductor is a **meta-prompting system** where every file is both implementation
 
 ```yaml
 ---
-name: conductor:command-name
+name: dev:command-name
 description: One-line description
 argument-hint: "<required>" or "[optional]"
 allowed-tools: [Read, Write, Bash, Glob, Grep, AskUserQuestion]
@@ -182,7 +182,7 @@ Build authentication system
 | Type | Convention | Example |
 |------|------------|---------|
 | Files | kebab-case | `execute-phase.md` |
-| Commands | `conductor:kebab-case` | `conductor:execute-phase` |
+| Commands | `dev:kebab-case` | `dev:execute-phase` |
 | XML tags | kebab-case | `<execution_context>` |
 | Step names | snake_case | `name="load_project_state"` |
 | Bash variables | CAPS_UNDERSCORES | `PHASE_ARG`, `PLAN_START_TIME` |
